@@ -1,13 +1,12 @@
-# Fake XP start <h1>
+# Fake XP start 
 
-### Install requirements <h3>
+### Install requirements 
+## To use in safemode install icewm 
 
-## To use in safemode install icewm <h2>
 
-´´´
-sudo apt install icewm
-´´´
-## Put the winXPsound.mp4 in some place that you **remember** <h2>
+'''sudo apt install icewm'''
+
+## Put the winXPsound.mp4 in some place that you **remember** 
 ## The path in script **xp_sound.py** /home/kali/.icewm have to be changed to alctualy path.<h2>
 ### if .icewm doesnt exist. <h3>
 ´´´
