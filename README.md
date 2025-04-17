@@ -9,7 +9,7 @@ To use in safemode on startup install icewm.
 <br>
 Put the winXPsound.mp4 in some place that you _**remember**_; like mv winXPsound.mp4 actualy_path/. 
 The path in script **xp_sound.py** /home/kali/.icewm have to be changed to actualy path.<br><br>
-<h3> if .icewm doesnt exist.
+<h3> if .icewm doesnt exist.</h3>
 <br>
 in home<br>
   
