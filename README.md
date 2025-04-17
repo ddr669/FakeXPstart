@@ -16,7 +16,7 @@ in home
 
 `cp FakeXPstart/* .icewm/`
 <br>
-`chmod +x startup`
+`chmod +x startup`<br>
 `chmod 777 startup`
 <br><br>
 
