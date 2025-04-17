@@ -1,0 +1,12 @@
+#!/bin/bash
+python3 /home/kali/.icewm/xp_sound.py &
+sleep 2
+volumeicon &
+# python3 /home/kali/.icewm/xp_sound.py &
+sleep 2
+nm-applet &
+#pcmanfm --desktop &
+pcmanfm-qt --set-wallpaper=/home/kali/Downloads/winxp.jpg --wallpaper-mode=center --desktop  & 
+setxkbmap br &
+
+
