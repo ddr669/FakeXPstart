@@ -5,24 +5,40 @@ from sys import argv
 from os import environ
 from time import sleep
 
-def brilho_fraco(screen, x=10, y=70, size=[200,200]):
+def brilho(screen, x=10, y=70, size=[200,200]):
     brilho = pygame.Surface((size[0], size[1]), pygame.SRCALPHA)
     #brilho.fill((110, 140, 250))
-    pygame.draw.circle(brilho, (255,255,255,10), (size[0]/2, size[0]/2), 25)
+    pygame.draw.circle(brilho, (255,255,255,5), (300,300), 420)
+    pygame.draw.circle(brilho, (255,255,255,6), (300,300), 415)
+    pygame.draw.circle(brilho, (255,255,255,7), (300,300), 405)
+    pygame.draw.circle(brilho, (255,255,255,8), (300-10,300-10), 395)
+    pygame.draw.circle(brilho, (255,255,255,9), (300-10,300-10), 375)
+
+    pygame.draw.circle(brilho, (255,255,255,10), (300,300-12), 363)
+    pygame.draw.circle(brilho, (255,255,255,11), (300,300-13), 350)
+    pygame.draw.circle(brilho, (255,255,255,12), (300,300-15), 345)
+    pygame.draw.circle(brilho, (255,255,255,13), (300,300-17), 340)
+    pygame.draw.circle(brilho, (255,255,255,14), (300,300-19), 335)
+    pygame.draw.circle(brilho, (255,255,255,15), (300,300-21), 325)
+
+    pygame.draw.circle(brilho, (255,255,255,16), (300,300-21), 315)
+    pygame.draw.circle(brilho, (255,255,255,17), (300,300-22), 300)
+
+
+    pygame.draw.circle(brilho, (255,255,255,28), (300,300-24), 260)
+    pygame.draw.circle(brilho, (255,255,255,30), (300,300-26), 255)
+    pygame.draw.circle(brilho, (255,255,255,35), (300, 300-28), 235)
+    pygame.draw.circle(brilho, (255,255,255,42), (300, 300-29), 215)
+    pygame.draw.circle(brilho, (255,255,255,43), (300, 300-30), 190)
+    pygame.draw.circle(brilho, (255,255,255,44), (300, 300-30), 175)
+    pygame.draw.circle(brilho, (255,255,255, 46), (300, 300-30), 165)
+    pygame.draw.circle(brilho, (255,255,255, 48), (300, 300-32), 150)
+    pygame.draw.circle(brilho, (255,255,255, 49), (300,300-32), 140)
+    pygame.draw.circle(brilho, (255,255,255, 51), (300,300-35), 125)
+
     screen.blit(brilho, (x, y))
 
-def brilho_na_tela(screen, x=10, y=70, size=[120,120]):
-    brilho = pygame.Surface((size[0],size[1]), pygame.SRCALPHA)
-    # brilho forte
-    #brilho.fill((110, 140, 250))
-    pygame.draw.circle(brilho, (255,255,255,110), (size[0]/2, size[0]/2), 25)
-    pygame.draw.circle(brilho, (255,255,255,120), (size[0]/3, size[0]/3), 25)
-    pygame.draw.circle(brilho, (255,255,255,168), (size[0]/4,size[0]/4), 25)
-    pygame.draw.circle(brilho, (255,255,255,140), (20, 20), 25)
-    
-    screen.blit(brilho, (x, y))
-    
-    
+
 
 def shadow_text(screen, fonte,texto="Welcome", x=190, y=190, colour=(255,255,255), size=22,backcol=(100,100,100)):
     fonte.set_italic(True)
@@ -51,18 +67,17 @@ try:
     sound = pygame.mixer.Sound("/home/kali/.icewm/Windows XP Startup.mp3")
 except:
     escape = ""
-    print("-"*35, "\n", f"{escape:^2}", "usage xp_sound.py sound.mp3", "\n","-"*35 )
+    print("-"*35, "\n", f"{escape:^2}", "startup audio not found! ", "\n","-"*35 )
 
 
 tocou = True
 running = True
-#screen = pygame.display.set_mode((400,400))
-screen =  pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)   #400,400)) 
-                                   #screen_width, screen_height))
-                                   # pygame.FULLSCREEN)
+
+screen =  pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)
 
 def padding_blue(size: list[int, int])->pygame.Surface:
-    surface_top = pygame.Surface((size[0],size[1] ))#screen_width,screen_height))
+
+    surface_top = pygame.Surface((size[0],size[1] ))
     surface_top.fill((20, 10, 250))
 
     pygame.draw.aaline(surface_top, (140, 180, 230), (0, size[1] -2), (size[0] / 8, size[1] -1), 20)
@@ -100,8 +115,8 @@ while running:
             if event.type == pygame.QUIT:
                 running = False
         
-        brilho_fraco(screen)
-        brilho_na_tela(screen)
+        brilho(screen, x=0,y=0,size=[screen_width/2, screen_height/1.3])
+        
         surface_top = padding_blue([screen_width,150])
     
         screen.blit(surface_top, (0,-5))
