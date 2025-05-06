@@ -7,35 +7,13 @@ from time import sleep
 
 def brilho(screen, x=10, y=70, size=[200,200]):
     brilho = pygame.Surface((size[0], size[1]), pygame.SRCALPHA)
-    #brilho.fill((110, 140, 250))
-    pygame.draw.circle(brilho, (255,255,255,5), (300,300), 420)
-    pygame.draw.circle(brilho, (255,255,255,6), (300,300), 415)
-    pygame.draw.circle(brilho, (255,255,255,7), (300,300), 405)
-    pygame.draw.circle(brilho, (255,255,255,8), (300-10,300-10), 395)
-    pygame.draw.circle(brilho, (255,255,255,9), (300-10,300-10), 375)
+    transparency = 5
+    for _ in range(420, 88, -1):
+        pygame.draw.circle(brilho, (255,255,255, transparency), (300,300), _)
+        transparency += 0.25
 
-    pygame.draw.circle(brilho, (255,255,255,10), (300,300-12), 363)
-    pygame.draw.circle(brilho, (255,255,255,11), (300,300-13), 350)
-    pygame.draw.circle(brilho, (255,255,255,12), (300,300-15), 345)
-    pygame.draw.circle(brilho, (255,255,255,13), (300,300-17), 340)
-    pygame.draw.circle(brilho, (255,255,255,14), (300,300-19), 335)
-    pygame.draw.circle(brilho, (255,255,255,15), (300,300-21), 325)
-
-    pygame.draw.circle(brilho, (255,255,255,16), (300,300-21), 315)
-    pygame.draw.circle(brilho, (255,255,255,17), (300,300-22), 300)
-
-
-    pygame.draw.circle(brilho, (255,255,255,28), (300,300-24), 260)
-    pygame.draw.circle(brilho, (255,255,255,30), (300,300-26), 255)
-    pygame.draw.circle(brilho, (255,255,255,35), (300, 300-28), 235)
-    pygame.draw.circle(brilho, (255,255,255,42), (300, 300-29), 215)
-    pygame.draw.circle(brilho, (255,255,255,43), (300, 300-30), 190)
-    pygame.draw.circle(brilho, (255,255,255,44), (300, 300-30), 175)
-    pygame.draw.circle(brilho, (255,255,255, 46), (300, 300-30), 165)
-    pygame.draw.circle(brilho, (255,255,255, 48), (300, 300-32), 150)
-    pygame.draw.circle(brilho, (255,255,255, 49), (300,300-32), 140)
-    pygame.draw.circle(brilho, (255,255,255, 51), (300,300-35), 125)
-
+   #brilho.fill((110, 140, 250))
+  
     screen.blit(brilho, (x, y))
 
 
